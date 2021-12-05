@@ -4,10 +4,13 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/danhsach.php";
 include "model/taikhoan.php";
+include "model/cart.php";
+include "model/binhluan.php";
 
 
 
 if(!isset($_SESSION['mycart'] )) $_SESSION['mycart'] =[];
+if(!isset($_SESSION['user']['id'] )) $_SESSION['user']['id'] =[];
 
 $lisdm=lisdm();
 $lissp=lissp_home();///đưa toàn bộ sản phẩm từ csdl 
@@ -138,10 +141,25 @@ case'quenmk':
                 array_push($_SESSION['mycart'],$spadd); 
                 // thêm một mảng con vào mảng cha
             }
-            include "view/cart/cart.php";
+            header('location: '.$_SERVER["HTTP_REFERER"]);
             break;
         
+            // case'muangay':
 
+            //     if(isset($_POST['muangay'])&& ($_POST['muangay'])){
+            //         $id=$_POST['id'];
+            //         $name=$_POST['name'];
+            //         $img=$_POST['img'];
+            //         $price=$_POST['price'];
+            //         $soluong=1;
+            //         $ttien=$soluong * $price;
+            //         $spadd=[$id,$name,$img,$price,$soluong,$ttien];
+            //         array_push($_SESSION['mycart'],$spadd); 
+            //         // thêm một mảng con vào mảng cha
+            //     }
+            //     include "view/chitietsp.php";
+            //     break;
+            
         case 'xoacart':
             if(isset($_GET['idcart'])){
                 $idcart=$_GET['idcart'];
@@ -161,7 +179,39 @@ case'quenmk':
             include "view/cart/cart.php";
             break;
         case 'bill':
-            
+            if(isset($_POST['dongymuahang'])&& ($_POST['dongymuahang'])){
+
+                $iduser=0;
+                $name=$_POST['name'];
+                $mail=$_POST['mail'];
+                $phone=$_POST['phone'];
+                $address=$_POST['address'];
+                date_default_timezone_set("Asia/Bangkok");
+                $ngaydathang=date('h:i:sa d/m/y');
+                $tongdonhang=tongdonhang();
+                //tạo bill
+                $idbill=insert_bill($iduser,$name,$mail,$phone,$address,$ngaydathang,$tongdonhang);
+                //b2 insert cart
+
+           for ($i=0; $i< sizeof($_SESSION['mycart']);$i++){
+
+            $tensp=$_SESSION['mycart'][$i][1];
+            $img=$_SESSION['mycart'][$i][2];
+            $price=$_SESSION['mycart'][$i][3];
+            $soluong=$_SESSION['mycart'][$i][4];
+            $thanhtien=$price*$soluong;
+
+            insert_cart($img,$tensp,$price,$soluong,$thanhtien,$idbill);
+
+
+           }
+                //xóa bill
+                $_SESSION['mycart']=[];
+
+
+            }
+            $bill=loadone_bill($idbill);
+            $billct=loadall_cart($idbill);
 
             include "view/cart/bill.php";
             break;
@@ -170,7 +220,28 @@ case'quenmk':
 
 
 
+        case 'binhluan':
+          
+            if(isset($_POST['guibinhluan'])&& ($_POST['guibinhluan'])){
+                
+                $idsp =$_POST['idsp'];
+                $comm_name= $_POST['comm_name'];
+                $comm_mail= $_POST['comm_mail'];
+                $comm_details= $_POST['comm_details'];
+                date_default_timezone_set("Asia/Bangkok");
+                $comm_date=date('h:i:sa d/m/y');
+                insert_binhluan($idsp,$comm_name,$comm_mail,$comm_date,$comm_details);
 
+
+            }
+           
+            $loadone=loadone_ctsp($idsp);
+            extract($loadone);
+            $loadone_ctsp_dm=loadone_ctsp_dm($idsp,$iddanhmuc);
+            $comment=loadall_binhluan($idsp);
+            // include 'view/chitietsp.php';
+            header('location: '.$_SERVER["HTTP_REFERER"]);
+            break;
 
 
     default:

@@ -430,9 +430,35 @@ ul li:hover {
 	color: black;
 	cursor: pointer;
 }
-	
-	
-	
+.row.mb.donhang {
+  margin: auto;
+}
+.row.boxcontent.formphanloai {
+  position: relative;
+  left: 22%;
+  
+}.row.boxcontent.formphanloai1 {
+  position: relative;
+  left: 10%;
+  
+}
+.row.boxcontent.formphanloai li, .row.boxcontent.formphanloai1 li {
+  font-size: 19px;
+  margin-right: 10px;
+}
+.boxtitlie {
+  font-size: 20px;
+}
+input[type="submit"] {
+  width: 100px;
+  height: 45px;
+  margin-left: 10px;
+  background-color: red;
+  border: 1px solid red;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 3px;
+}
 
 
 

@@ -1,127 +1,84 @@
   <!-- phần nôi dung -->
 
+  <div class="row">
+  <div id="main" class="col-lg-12 col-md-12 col-sm-12">
+  <h2 style="font-size:30px"> Cảm ơn quý khách đã đặt hàng</h2>
 
-  <div class="row mb ">
-      <div class="boxtrai mr">
-          <div class="row mb noidung">
-              <div class="boxtitlie">giỏ hàng</div>
-              <div class="boxcontent formphanloai">
-                  <table>
-                      <tr>
-                         <td>người đặt hàng </td>
-                         <td><input type="text" name="name"id=""></td>
-                      </tr>
-                      <tr>
-                         <td>Địa chỉ </td>
-                         <td><input type="text" name="diachi"id=""></td>
-                      </tr>
-                      <tr>
-                         <td>Email </td>
-                         <td><input type="text" name="email"id=""></td>
-                      </tr>
-                      <tr>
-                         <td>số điện thoại </td>
-                         <td><input type="text" name="sdt"id=""></td>
-                      </tr>
+<div id="my-cart">
 
-                 
+   
+<div class="row mb donhang">
+                  <div class="boxtitlie">Thông Tin Đơn Hàng</div>
+                  <div class="row boxcontent formphanloai" style="text-align:center">
+                      <li>Mã Đơn Hàng: DAM-<?=$bill['id'];?></li>
+                      <li>ngày đặt hàng: <?=$bill['ngaydathang'];?></li>
+                      <li>tổng tiền đơn hàng: <?=$bill['total'];?></li>
 
-                  </table>
-                 
-              </div>
-          </div>
+                  </div>
+    </div>
+</div>
+<div id="customer">
 
 
-          <div class="row mb noidung">
-              <div class="boxtitlie">bình luận</div>
-              <div class="boxcontent">
+    <div class="row">
+    <?php
+              
+              if(isset($bill)&&(is_array($bill))){
+                  extract($bill);
 
-              </div>
-          </div>
+              }
+              
+              ?>
+  
 
+  <div class="boxtitlie">Thông Tin người đặt hàng</div>
+                  <div class="row boxcontent formphanloai1" style="text-align:center">
+                      <li>tên người đặt hàng: <?=$bill['name'];?></li>
+                      <li>email: <?=$bill['mail'];?></li>
+                      <li>số điện thoại : <?=$bill['phone'];?></li>
+                      <li>Địa chỉ : <?=$bill['address'];?></li>
 
-          <div class="row mb noidung">
-              <div class="boxtitlie">thông tin giỏ hàng</div>
+                  </div>
 
-              <div class="boxcontent formphanloai">
-                  <table>
-                      <tr>
-                          <th>Hình</th>
-                          <th>Sản phẩm</th>
-                          <th>Đơn giá</th>
-                          <th>số lượng</th>
-                          <th>thành tiền </th>
+    </div>
+    
+
+</div>
+<div id="my-cart">
+
+    <div class="row">
+        <div class="cart-nav-item col-lg-7 col-md-7 col-sm-12 boxtitlie">Thông tin sản phẩm</div>
+        <div class="cart-nav-item col-lg-2 col-md-2 col-sm-12">Số lượng</div>
+        <div class="cart-nav-item col-lg-3 col-md-3 col-sm-12">Giá</div>
+    </div>
+   
+
+    
                          
+                         <?php
+                         
+                         bill_chitiet($billct);
+                     
 
-                      </tr>
+                         ?>
 
-                      <?php 
-                $tong=0;
-                $i=0;
-                
-                    foreach ($_SESSION['mycart']  as $cart) {
-                        $hinh="upload/".$cart[2];
-                        $ttien=$cart[3]*$cart[4];
-                        $tong+=$ttien;
                       
-                        $xoacart='<a href="index.php?act=xoacart&idcart='.$i.'"><input type="button" value="xóa"></a>';
-
-                       echo'
-                       <tr>
-                    <td><img src="'.$hinh.'" style="height: 50px;width:70px"></td>
-                    <td>'.$cart[1].'</td>
-                    <td>'.$cart[3].'</td>
-                    <td>'.$cart[4].'</td>
-                    <td>'.$ttien.'</td>
-                
-                    
-                    
-                </tr>';
-             
-                $i+=1;
-                      
-                    }
-                    echo'
-                    <tr>
-                    <td colspan="4">Tổng đơn hàng</td>
-                    
-                    <td>'.$tong.'</td>
-                    <td></td>
-                    
-                </tr>
-                ';
-
-                ?>
 
 
-                  </table>
-                  <!-- <div class="row nut">
-                      <a class="mb" href="index.php?act=bill"><input type="button" value=" Đặt mua "></a>
 
-                      <a href="index.php?act=xoacart"><input type="button" value="xóa giỏ hàng"></a>
 
-                  </div> -->
-              </div>
+
+
+
+
+</div>
+<!--	End Cart	-->
+
+<!--	Customer Info	-->
+
+
+</div>
+
+
           </div>
-          <div class="row nut">
-              <a class="mb" href="index.php?act=bill"><input type="button" value=" Đặt mua "></a>
-
-              <a href="index.php?act=xoacart"><input type="button" value="xóa giỏ hàng"></a>
-
-              </div>
-          <div>
-
-
-      </div>
-
-
-  </div>
-  <div class="boxphai ">
-      <?php
-        
-        include "view/boxphai.php";
-        ?>
-  </div>
-
-  </div>
-  </div>
+          

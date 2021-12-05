@@ -1,8 +1,8 @@
 <?php 
 
 // tạo các hàm với các chức năng tương tác với csdl
-function addsp($tensp,$giasp,$hinh,$mota,$iddm){
-    $sql="insert into sanpham(name,price,img,mota,iddanhmuc)value('$tensp','$giasp','$hinh','$mota','$iddm')";//thêm thành phần vào csdl
+function addsp($tensp,$giasp,$hinh,$mota,$iddm,$baohanh,$phukien,$tinhtrang,$trangthai){
+    $sql="insert into sanpham(name,price,img,mota,iddanhmuc,baohanh,phukien,tinhtrang,trangthai)value('$tensp','$giasp','$hinh','$mota','$iddm','$baohanh','$phukien','$tinhtrang','$trangthai')";//thêm thành phần vào csdl
     pdo_execute($sql);//lấy từ moduel câu để->câu lệnh thực thi, trả về kết quả
 
 }
@@ -73,12 +73,12 @@ function loadone_ctsp_dm($idsp,$iddanhmuc){
     $loadone_ctsp_dm=pdo_query($sql);
     return $loadone_ctsp_dm;
 }
-function update_sp($id,$iddm,$tensp,$giasp,$hinh,$motasp){
+function update_sp($id,$iddm,$tensp,$giasp,$hinh,$motasp,$baohanh,$tinhtrang,$phukien,$trangthai){
 
     if($hinh!='')
-    $sql="update sanpham set  name='".$tensp."',price='".$giasp."',img='".$hinh."',mota='".$motasp."',iddanhmuc='".$iddm."' where id=".$id;//thêm thành phần vào csdl
+    $sql="update sanpham set  name='".$tensp."',price='".$giasp."',img='".$hinh."',mota='".$motasp."',iddanhmuc='".$iddm."',baohanh='".$baohanh."',tinhtrang='".$tinhtrang."',phukien='".$phukien."',trangthai='".$trangthai."' where id=".$id;//thêm thành phần vào csdl
     else
-        $sql="update sanpham set  name='".$tensp."',price='".$giasp."',mota='".$motasp."',iddanhmuc='".$iddm."' where id=".$id;//thêm thành phần vào csdl}
+        $sql="update sanpham set  name='".$tensp."',price='".$giasp."',mota='".$motasp."',iddanhmuc='".$iddm."',baohanh='".$baohanh."',tinhtrang='".$tinhtrang."',phukien='".$phukien."',trangthai='".$trangthai."' where id=".$id;//thêm thành phần vào csdl}
     
     
 

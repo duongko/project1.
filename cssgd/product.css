@@ -132,22 +132,38 @@
 }
 
 
-#themgiohang a {
-	background-color: green;
-	float: left;
-	margin-left: 10px;
-	height: 52px;
-	padding: 18px;
-	border-radius: 3px;
-	font-size: 13px;
-	color: #fff;
-	border: 1px solid green;
-	text-decoration: none;
+
+input#themgiohang {
+    width: 100px;
+    height: 51px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 4px;
+    margin-left: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+input#themgiohang:hover{
+	background-color: #fff;
+	color: green;
+
 }
 
+input#themgiohang1,#themgiohang1 {
+width: 54px;
+    margin-left: 55px;
+}
+#themgiohang1 a{
+	display: inline-table;
 
-#themgiohang a:hover {
-	color: green;
-	background: #FFF;
+	color: black;
+margin-left: 2px;
+
 	cursor: pointer;
+	text-decoration: none;
+
+}
+button#themgiohang1 {
+	margin-left: 2px;
+	border: 1px solid;
 }

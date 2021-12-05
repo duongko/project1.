@@ -40,7 +40,7 @@
                     <th>Hình</th>
                     <th>Giá</th>
                     <th>View</th>
-                    <th></th>
+                    <th>Thao tác</th>
                 </tr>
                 <?php 
                         foreach($lissp as $sanpham){

@@ -39,6 +39,8 @@
                     <th>Ho&ten</th>
                     <th>Email</th>
                     <th>quyền</th>
+                    <th>Thao tác</th>
+                 
                  
                 </tr>
                 <?php 

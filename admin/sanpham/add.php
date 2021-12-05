@@ -45,6 +45,26 @@
             <input type="file" name="imgsp" value="">
         </div>
         <div class="row mb">
+                   <h5>Bảo hành:</h5>
+                    <input type="text" name="baohanh" value="">
+                </div>
+                <div class="row mb">
+                   <h5>Phụ kiện:</h5>
+                    <input type="text" name="phukien" value="">
+                </div>
+                <div class="row mb">
+                   <h5>Tình trạng:</h5>
+                    <input type="text" name="tinhtrang" value="">
+                </div>
+                <div class="row mb">
+                   <h5>Trạng thái:</h5>
+                   <select name="trangthai" class="form-control">
+                                <option name="trangthai" value=1>Còn hàng</option>
+                                <option name="trangthai" value=0>Hết hàng</option>
+                            </select>
+                            
+                </div>
+        <div class="row mb">
             Mô tả sản phẩm:
             <textarea name="motasp" id="" cols="30" rows="10"></textarea>
         </div>

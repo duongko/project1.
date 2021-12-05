@@ -15,7 +15,7 @@
                     <th></th>
                     <th>MÃ loại</th>
                     <th>Tên loại</th>
-                    <th>
+                    <th>Thao tác</th>
                         </td>
                 </tr>
                 <?php 

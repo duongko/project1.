@@ -69,26 +69,6 @@
                     <?=$hinhpath?>
                 </div>
                 <div class="row mb">
-                   <h5>Bảo hành:</h5>
-                    <input type="text" name="baohanh" value="<?=$baohanh?>">
-                </div>
-                <div class="row mb">
-                   <h5>Phụ kiện:</h5>
-                    <input type="text" name="phukien" value="<?=$phukien?>">
-                </div>
-                <div class="row mb">
-                   <h5>Tình trạng:</h5>
-                    <input type="text" name="tinhtrang" value="<?=$tinhtrang?>">
-                </div>
-                <div class="row mb">
-                   <h5>Trạng thái:</h5>
-                   <select name="trangthai" class="form-control">
-                                <option name="trangthai" value=1>Còn hàng</option>
-                                <option name="trangthai" value=0>Hết hàng</option>
-                            </select>
-                            
-                </div>
-                <div class="row mb">
                     <h5>Mô tả sản phẩm:</h5>
                     <textarea name="motasp" id="" cols="30" rows="10" ><?php echo $mota ?></textarea>
                 </div>

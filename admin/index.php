@@ -21,6 +21,8 @@ include "header.php";//trang header
 include "../model/danhsach.php";//modure function kết nối csdl
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
+include "../model/cart.php";
+include "../model/binhluan.php";
 
 
 if(isset($_GET["act"])){
@@ -102,6 +104,10 @@ if(isset($_GET["act"])){
                     $giasp=$_POST['giasp'];
                     $motasp=$_POST['motasp'];
                     $tensp=$_POST['tensp'];
+                    $baohanh=$_POST['baohanh'];
+                    $tinhtrang=$_POST['tinhtrang'];
+                    $phukien=$_POST['phukien'];
+                    $trangthai=$_POST['trangthai'];
                
                     $hinh=$_FILES['imgsp']['name'];
                     $target_dir = "../upload/";  
@@ -112,7 +118,7 @@ if(isset($_GET["act"])){
                         
                     
                         
-                    addsp($tensp,$giasp,$hinh,$motasp,$iddm);
+                    addsp($tensp,$giasp,$hinh,$motasp,$iddm,$baohanh,$phukien,$tinhtrang,$trangthai);
        //show ra để gọi ra giao diện
 
 
@@ -177,6 +183,10 @@ if(isset($_GET["act"])){
                 $iddm=$_POST['iddm'];
                 $giasp=$_POST['giasp'];
                 $motasp=$_POST['motasp'];
+                $baohanh=$_POST['baohanh'];
+                $tinhtrang=$_POST['tinhtrang'];
+                $phukien=$_POST['phukien'];
+                $trangthai=$_POST['trangthai'];
                
            
                 $hinh=$_FILES['imgsp']['name'];
@@ -190,7 +200,7 @@ if(isset($_GET["act"])){
                 //lấy id từ input hidden từ update.php
                 // $sql="update danhmuc set name='$tenloai' where id=".$id;//thêm thành phần vào csdl
                 // $lissp=pdo_execute($sql);//lấy từ moduel câu để 
-                update_sp($id,$iddm,$tensp,$giasp,$hinh,$motasp);
+                update_sp($id,$iddm,$tensp,$giasp,$hinh,$motasp,$baohanh,$tinhtrang,$phukien,$trangthai);
                 $thongbao='cap nhap thành công';
 
 
@@ -295,7 +305,48 @@ if(isset($_GET["act"])){
         case'thoat':
         session_unset();
         header('location: index.php');
-    
+        
+        case'listbill':
+
+            if(isset($_POST['kyw'])&&($_POST['kyw'])){
+                $kyw=$_POST['kyw'];
+            }else{
+                $kyw="";
+            }
+            $listbill=loadall_bill($kyw);
+
+
+
+        include "listbill/listbill.php";                        
+        break;
+        case "xoabill"://xóa
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+             $id=$_GET['id'];
+             xoabill($id);
+            }
+            if(isset($_POST['kyw'])&&($_POST['kyw'])){
+                $kyw=$_POST['kyw'];
+            }else{
+                $kyw="";
+            }
+            //in ra lịa màn hình danh mục
+            $listbill=loadall_bill($kyw);
+             include "listbill/listbill.php";
+             break;   
+        case 'binhluan':
+            $listcomm=loadall_listcomm();
+            include "binhluan/binhluan.php";
+            break;     
+        case "xoabinhluan"://xóa
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+             $id=$_GET['id'];
+             xoabinhluan($id);
+            }
+            
+             //in ra lịa màn hình danh mục
+             $listcomm=loadall_listcomm();
+             include "binhluan/binhluan.php";
+             break;   
 
     default:
     include "content.php";

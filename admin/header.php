@@ -74,6 +74,8 @@ if (!defined("security")) {
                         <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
                         <a href="index.php?act=lisdm"><i class="fa fa-fw fa-book"></i> Quản lý danh mục</a>
                         <a href="index.php?act=lissp"><i class="fa fa-fw fa-camera"></i> Quản lý sản phẩm</a>
+                        <a href="index.php?act=binhluan"><i class="fa fa-fw fa-camera"></i> Quản lý bình luận</a>
+                        <a href="index.php?act=listbill"><i class="fa fa-fw fa-camera"></i> Quản lý đơn hàng</a>
                         <?php
                         
                

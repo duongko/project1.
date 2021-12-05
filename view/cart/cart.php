@@ -27,17 +27,17 @@
         <div class="row">
             <!-- slide -->
             <div id="main" class="col-lg-12 col-md-12 col-sm-12">
-            
+
 
                 <div id="my-cart">
-                	<div class="row">
-                        <div class="cart-nav-item col-lg-7 col-md-7 col-sm-12">Thông tin sản phẩm</div> 
-                        <div class="cart-nav-item col-lg-2 col-md-2 col-sm-12">Tùy chọn</div> 
-                        <div class="cart-nav-item col-lg-3 col-md-3 col-sm-12">Giá</div>    
-                    </div>  
-                    <form method="post">
-                    
-                    <?php 
+                    <div class="row">
+                        <div class="cart-nav-item col-lg-7 col-md-7 col-sm-12">Thông tin sản phẩm</div>
+                        <div class="cart-nav-item col-lg-2 col-md-2 col-sm-12">Tùy chọn</div>
+                        <div class="cart-nav-item col-lg-3 col-md-3 col-sm-12">Giá</div>
+                    </div>
+                    <form action="index.php?act=bill" method="post">
+
+                        <?php 
                 $tong=0;
                 $i=0;
                 
@@ -78,57 +78,57 @@
                 ';
 
                 ?>
-                        
-                    
-                    
+
                     </form>
-                               
+
+
+
                 </div>
                 <!--	End Cart	-->
-                
+
                 <!--	Customer Info	-->
                 <div id="customer">
-                	<form method="post">
-                    <div class="row">
-                    	
-                    	<div id="customer-name" class="col-lg-4 col-md-4 col-sm-12">
-                        	<input placeholder="Họ và tên (bắt buộc)" type="text" name="name" class="form-control" required>
-                        </div>
-                        <div id="customer-phone" class="col-lg-4 col-md-4 col-sm-12">
-                        	<input placeholder="Số điện thoại (bắt buộc)" type="text" name="phone" class="form-control" required>
-                        </div>
-                        <div id="customer-mail" class="col-lg-4 col-md-4 col-sm-12">
-                        	<input placeholder="Email (bắt buộc)" type="text" name="mail" class="form-control" required>
-                        </div>
-                        <div id="customer-add" class="col-lg-12 col-md-12 col-sm-12">
-                        	<input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text" name="add" class="form-control" required>
-                        </div>
-                        
-                    </div>
-                    </form>
-                    <div class="row">
-                    	<div class="by-now col-lg-6 col-md-6 col-sm-12">
-                        	<a href="#">
-                            	<b>Mua ngay</b>
-                                <span>Giao hàng tận nơi siêu tốc</span>
-                            </a>
-                        </div>
-                        <div class="by-now col-lg-6 col-md-6 col-sm-12">
-                        	<a href="#">
-                            	<b>Trả góp Online</b>
-                                <span>Vui lòng call (+84) 0988 550 553</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--	End Customer Info	-->
-                
-              
-                
+                <form action="index.php?act=bill" method="post">
 
-               
+                    <div class="row">
+
+                  
+
+
+                            <div id="customer-name" class="col-lg-4 col-md-4 col-sm-12">
+                                <input placeholder="Họ và tên (bắt buộc)" type="text" name="name" class="form-control"
+                                    required>
+                            </div>
+                            <div id="customer-phone" class="col-lg-4 col-md-4 col-sm-12">
+                                <input placeholder="Số điện thoại (bắt buộc)" type="text" name="phone"
+                                    class="form-control" required>
+                            </div>
+                            <div id="customer-mail" class="col-lg-4 col-md-4 col-sm-12">
+                                <input placeholder="Email (bắt buộc)" type="text" name="mail" class="form-control"
+                                    required>
+                            </div>
+                            <div id="customer-add" class="col-lg-12 col-md-12 col-sm-12">
+                                <input placeholder="Địa chỉ nhà riêng hoặc cơ quan (bắt buộc)" type="text"
+                                    name="address" class="form-control" required>
+                            </div>
+
+                    </div>
+                    <div class="row">
+                        <input type="submit" name="dongymuahang" value="mua ngay"></input>
+                    </div>
+                  
+                </form>
+                </div>
+
             </div>
+            <!--	End Customer Info	-->
+
+
+
+
+
         </div>
     </div>
+</div>
 </div>
 <!--	End Body	-->

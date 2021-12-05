@@ -133,7 +133,8 @@
                         <input type="hidden" name="name" value="'.$name.'">
                         <input type="hidden" name="img" value="'.$img.'">
                         <input type="hidden" name="price" value="'.$price.'">
-                        <input type="submit" name="addtocart" value="thêm giỏ hàng">
+                        <input type="submit" name="addtocart" value="Add"id="themgiohang1"class="nutthemgiohang1">
+                        <button id="themgiohang1"class="nutthemgiohang1"><a href="index.php?act=chitietsp&idsp='.$id.'">Xem</a></button>
                   </form>
                   
                   

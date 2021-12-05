@@ -14,7 +14,7 @@
                 </div>
                 <div id="service" class="col-lg-3 col-md-6 col-sm-12">
                     <h3>Dịch vụ</h3>
-                    <p>Tất cả các sản phẩm do NVT Comphuter bán đều được bảo hành đúng và đủ theo chính sách của nhà sản xuất.</p>
+                    <p>Tất cả các sản phẩm do NVT Mobie bán đều được bảo hành đúng và đủ theo chính sách của nhà sản xuất.</p>
                     <p>Tất cả sản phẩm hư hỏng, không thuộc điều kiện đổi trả, sẽ được gửi cho nhà sản xuất hoặc đơn vị được nhà sản xuất uỷ quyền để sửa chữa theo đúng chính sách bảo hành của họ.</p>
                     <p>NVT mobie không chịu trách nhiệm nếu nhà sản xuất và/hoặc đơn vị được nhà sản xuất uỷ quyền từ chối bảo hành và/hoặc không thực hiện theo đúng cam kết của họ.</p>
                 </div>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <p>
-                        NVT © Copyrights 2021 Công Ty TNHH NVT Computer
+                        NVT © Copyrights 2021 Công Ty TNHH NVT Mobie
                     </p>
                 </div>
             </div>
